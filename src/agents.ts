@@ -373,6 +373,15 @@ export const agents: Record<AgentType, AgentConfig> = {
       return existsSync(join(home, '.adal'));
     },
   },
+  bob: {
+    name: 'bob',
+    displayName: 'IBM Bob',
+    skillsDir: '.bob/skills',
+    globalSkillsDir: join(home, '.bob/skills'),
+    detectInstalled: async () => {
+      return existsSync(join(home, '.bob'));
+    },
+  },
 };
 
 export async function detectInstalledAgents(): Promise<AgentType[]> {
